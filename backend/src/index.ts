@@ -28,7 +28,7 @@ AppDataSource.initialize().then(async () => {
         }
     });
 
-    app.listen(3000, () => {
+    app.listen(3000, "localhost", () => {
         console.log(`Server is running on port 3000`);
     });
 
