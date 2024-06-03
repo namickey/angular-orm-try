@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,13 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'frontend';
+  
+  mydata = '[]'
+  #http = inject(HttpClient)
+  constructor(private http: HttpClient) {
+    this.#http.get('http://localhost:3000/users/')
+    .subscribe(data => {
+      this.mydata = JSON.stringify(data);
+    });
+  }
 }
