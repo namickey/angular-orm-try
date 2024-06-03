@@ -1,5 +1,7 @@
 # backend
 
+# setup
+
 Node.js & TypeScriptのプロジェクト作成  
 https://typescript-jp.gitbook.io/deep-dive/nodejs  
 
@@ -18,13 +20,18 @@ TypeScriptの設定ファイルtsconfig.jsonを初期化します
 npx tsc --init --rootDir src --outDir lib --esModuleInterop --resolveJsonModule --lib es6,dom --module commonjs
 ```
 
+## 追加インストール
 ```shell
 npm install express mssql reflect-metadata typeorm
 ```
 
+# 開発向け起動
+
 ```
 npm start
 ```
+
+# 本番向けビルド＆起動
 
 ```
 npm run build
